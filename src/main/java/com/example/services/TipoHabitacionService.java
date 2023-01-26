@@ -15,4 +15,5 @@ import java.util.Optional;
 public interface TipoHabitacionService {
     public Optional<TipoHabitacion> getHabitacion(Integer id);
     public List<TipoHabitacion> getHabitaciones();
+    public TipoHabitacion saveHabitacion(TipoHabitacion tipoHabitacion);
 }

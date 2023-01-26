@@ -30,4 +30,9 @@ public class TipoHabitacionServiceImp implements TipoHabitacionService{
     public List<TipoHabitacion> getHabitaciones() {
         return tipoHabitacionDao.findAll();
     }
+
+    @Override
+    public TipoHabitacion saveHabitacion(TipoHabitacion tipoHabitacion) {
+        return tipoHabitacionDao.save(tipoHabitacion);
+    }
 }

@@ -9,11 +9,7 @@ import com.example.services.TipoHabitacionService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -33,5 +29,9 @@ public class HabitacionController {
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public Optional<TipoHabitacion> getHabitacion(@PathVariable("id")int id){
         return tipoHabitacionService.getHabitacion(id);
+    }
+    @RequestMapping(value = "/",method = RequestMethod.POST)
+    public TipoHabitacion saveHabitacion(@RequestBody TipoHabitacion tipoHabitacion){
+        return tipoHabitacionService.saveHabitacion(tipoHabitacion);
     }
 }
